@@ -43,16 +43,6 @@ function(configure_test testExecutable)
 endfunction(configure_test)
 
 ### Boost
-
-function(target_link_libraries_system target)
-    set(libs ${ARGN})
-    foreach (lib ${libs})
-        get_target_property(lib_include_dirs ${lib} INTERFACE_INCLUDE_DIRECTORIES)
-        target_include_directories(${target} SYSTEM PRIVATE ${lib_include_dirs})
-        target_link_libraries(${target} ${lib})
-    endforeach (lib)
-endfunction(target_link_libraries_system)
-
 add_library(boost INTERFACE)
 target_include_directories(boost INTERFACE boost_1_77_0)
 target_compile_definitions(boost INTERFACE BOOST_DATE_TIME_NO_LIB)

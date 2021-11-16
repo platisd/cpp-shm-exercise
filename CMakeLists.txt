@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(CppProject)
+project(TakeItToProduction)
 
 set(CMAKE_CXX_STANDARD 20)
 add_compile_options(
@@ -27,10 +27,7 @@ add_compile_options(
 
 add_subdirectory(external)
 
-add_executable(example example/single_process_shm.cpp)
 get_target_property(boost_include_dirs boost INTERFACE_INCLUDE_DIRECTORIES)
-target_include_directories(example SYSTEM PUBLIC ${boost_include_dirs})
-target_link_libraries(example PUBLIC rt)
 
 add_executable(data_creator_writer_shm example/data_creator_writer_shm.cpp)
 target_include_directories(data_creator_writer_shm SYSTEM PUBLIC ${boost_include_dirs})

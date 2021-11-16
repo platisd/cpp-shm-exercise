@@ -27,19 +27,13 @@ int main()
     void* addr = region.get_address();
 
     // Construct the shared structure in memory
-    Image* image = static_cast<Image*>(addr);
+    auto image = static_cast<Image*>(addr);
 
+    scoped_lock<interprocess_mutex> lock(image->mutex);
+    for (std::size_t i = 0; i < Image::size; ++i)
     {
-        std::cout << "Waiting" << std::endl;
-        scoped_lock<interprocess_mutex> lock(image->mutex);
-        std::cout << "Stopped Waiting" << std::endl;
-
-        for (std::size_t i = 0; i < Image::size; ++i)
-        {
-            // Lock the mutex
-            const auto current_pixel = image->data.at(i);
-            image->data.at(i)        = current_pixel + 1;
-        }
+        const auto current_pixel = image->data.at(i);
+        image->data.at(i)        = current_pixel + 1;
     }
 
     return 0;
