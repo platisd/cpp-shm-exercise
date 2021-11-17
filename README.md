@@ -32,10 +32,13 @@ found in the Boost library. It consists of the following files:
 * [shared_data.h](example/shared_data.h)
   * The data structure to share between the two processes
 
-It is up to you, to create a solution of high-enough quality that will handle the interprocess communication. The idea is that we end up with one or more libraries we can reuse.<br>
-Sounds vague? Well, it is!<br>
-We leave this open ended since we would like to see how you'd tackle the problem but
-if you would like to discuss some details with us, please feel free to get in touch.
+It is up to you, to create a solution of high-enough quality that will handle the interprocess communication. The idea is that we end up with one or more libraries we can reuse.
+
+Some ideas on what your libraries can support include:
+* Transferring many kinds of images with different dimensions
+* Waiting until new data is written to shared memory by another process
+
+Sounds a bit vague? Well, it is! We expect you to get in touch if you would like to discuss further.
 
 ## Things to keep in mind
 
