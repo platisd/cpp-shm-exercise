@@ -40,6 +40,10 @@ Some ideas on what your libraries can support include:
 
 Sounds a bit vague? Well, it is! We expect you to get in touch if you would like to discuss further.
 
+**Note**: If for whatever reason you don't feel like implementing the specific tasks, you are absolutely welcome to propose your own.
+The goal is to get a good glimpse of your technical profile and determine if we would be a good match for each other. For example,
+if you think you can showcase your awesome skills by simply rewriting the sample code, let us know and just go for it. 🎉
+
 ## Things to keep in mind
 
 * You may partly or entirely rewrite the existing code.
