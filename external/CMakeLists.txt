@@ -13,7 +13,7 @@ endif ()
 
 # Add googletest directly to our build. This defines
 # the gtest and gtest_main targets.
-set(gtest_release_version "1.10.0")
+set(gtest_release_version "1.15.2")
 add_subdirectory(googletest-release-${gtest_release_version} EXCLUDE_FROM_ALL)
 
 # The gtest/gtest_main targets carry header search path
@@ -44,5 +44,5 @@ endfunction(configure_test)
 
 ### Boost
 add_library(boost INTERFACE)
-target_include_directories(boost INTERFACE boost_1_77_0)
+target_include_directories(boost SYSTEM INTERFACE boost_1_86_0)
 target_compile_definitions(boost INTERFACE BOOST_DATE_TIME_NO_LIB)
